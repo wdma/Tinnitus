@@ -1,0 +1,45 @@
+﻿Documentation for: https://github.com/wdma/Tinnitus
+
+
+8 June 2018
+
+Found the error in the program!  Predictions are not 100% anymore – closer to 50%.  This is much closer to expected with this data set.  Also, I have added new features and tested the network predictions with two homemade test data sets.  Am not adapting for the CIFAR data sets.  Will post when ready.
+
+
+
+5 June 2018
+These are data collected for an experiment to identify changes in the 
+response properties of single neurons in the dorsal cochlear nucleus that 
+may serve as a neural correlate of tinnitus.  The justification, methods 
+and data analyses can be found here.  The dataset consists of 998 observations.
+Each observation consists of 114 features including identifying information, 
+response type, location and LTE II d-prime and flagged by population (tinnitus 
+or normal).    
+
+Contemporary machine learning techniques rely on very large training data sets 
+in order to make accurate predictions.  Our data are comparatively tiny, 
+nevertheless we were interested in seeing how well this class of models might 
+do on a binary test.  We eliminated systematic differences between data sets 
+are generally uninteresting for the question at hand.  For instance the 
+procedure used to induce tinnitus created a clear dependence on best frequency 
+(BF) that is not expected to be associated with the condition.  We eliminated 
+BF from the training and test data sets.  The identifying information (e.g.
+experiment date) was similarly eliminated. 
+
+This is an ongoing project and more will be added.  Thus far, we have 
+implemented two classes of architecture.  A dense neural net (DNN), modeled 
+after the iris data in the Tensorflow programmer tutorials and several 
+convolutional neural networks (CNN), modeled after the Tensorboard tutorial.  
+Behavior of the CNNs is too good, achieving 100% accuracy after less 
+the 1000 training epochs – need to investigate.  The network graph is shown above.
+The accuracy of the DNNs were not as good, never achieving 100% accuracy even 
+after 10,000 training epochs.
+
+It is curious that the models do so well on this task since the data 
+are biological.  This is a scientific experiment so, it is possible that an 
+important feature was our ability to focus the data sets to include only the 
+important features.  We will explore this possibility by looking at the 
+features that made the largest contribution and by trying different model 
+architectures.  For instance, we are currently implementing capsule nets.
+
+# Tinnitus
